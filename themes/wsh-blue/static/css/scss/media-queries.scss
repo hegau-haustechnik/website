@@ -1,0 +1,188 @@
+@import "const";
+@media only screen and (max-width: $tablet_start_size) {
+  header {
+    .site-logo img {
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+    ul.main-menu li p a {
+      line-height: 65px;
+    }
+  }
+
+  .content {
+    .top-image .image-container {
+      height: 200px;
+      .title h1 {
+      line-height: 200px;
+      }
+    }
+    .overview .columns {
+      padding-top: 30px;
+    }
+    .overview .left-part {
+      padding-right: 30px;
+    }
+    .overview .right-part {
+      padding-left: 30px;
+    }
+    .top-part-text {
+      padding: 40px 0;
+    }
+  }
+  .startpage {
+    .top-image .image-container {
+      height: 300px;
+    }
+    .our-range {
+      padding: 50px 0 50px 0;
+      h2 {
+        margin-bottom: 50px;
+      }
+      .columns {
+        margin-bottom: 50px;
+      }
+      .icon_image {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .leistungen {
+    .details {
+      padding: 50px 0;
+      h2 {
+        margin-bottom: 20px;
+      }
+      .onerow {
+        margin: 10px auto;
+        h3{
+          margin: 15px auto;
+        }
+      }
+    }
+    .contact-details {
+      padding: 50px 0;
+      h3 {
+        margin-top: 0;
+      }
+      .anfrage_container {
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  .referenzen {
+    .referenzen-listings {
+      padding: 0 0 40px 0;
+      h3 {
+        margin-top: 50px;
+      }
+    }
+    .container.referenzen {
+       margin: 32px auto 0 auto;
+      .columns span {
+        height: 140px;
+      }
+    }
+    .bewertungen {
+      padding: 35px 0;
+      h3{
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: $mobile_start_size) {
+  .content {
+    .top-image .image-container {
+      height: 150px;
+      .title h1 {
+        line-height: 150px;
+      }
+    }
+  }
+  header {
+    select#main-menu {
+      display: block;
+      width: 100%;
+      background-color: $blue;
+      padding: 15px;
+      color: $white;
+    }
+    .site-logo img {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      width: 140px;
+    }
+  }
+  .startpage {
+    .top-image .image-container {
+      height: 200px;
+    }
+    .owner-info .photo span {
+      width: 125px;
+      height: 125px;
+    }
+    .overview .left-part.with-border {
+      border-right: none;
+      padding-right: inherit;
+    }
+    .overview .right-part {
+      padding-left: inherit;
+    }
+    .overview h1 {
+      margin-bottom: 20px;
+    }
+    .overview h2 {
+      margin-bottom: 0;
+    }
+
+  }
+  .leistungen {
+    .overview {
+      .left-part {
+        padding-right: inherit;
+      }
+
+      .right-part.with-border {
+        padding-left: inherit;
+        border-left: none;
+      }
+    }
+    .details .container .onerow .row .columns.two {
+      width: 100%;
+      text-align: center;
+    }
+    .details .container .onerow h3 {
+      text-align: center;
+    }
+    .icon_image {
+      margin-top: 30px;
+    }
+  }
+
+  .kontakt {
+    .overview {
+      .left-part {
+        padding-right: inherit;
+      }
+      .right-part.with-border {
+        padding-left: inherit;
+        border-left: none;
+      }
+    }
+  }
+
+}
+@media only screen and (max-width: 380px) {
+  footer {
+    padding: 10px 0;
+    .columns.six {
+      width: 100%;
+    }
+    p, p a {
+      line-height: 32px;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            {{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}
+        </title>
+        {{ partial "head-meta.html" . }}
+        <link rel="stylesheet" href="{{ "css/stylesheets/style.css" | absURL }}">
+
+        <!--JQUERY load inline-->
+        {{ $jquery := "/themes/wsh-blue/static/js/jquery.js"  | readFile }}
+        <script type="text/javascript">
+            {{ $jquery | safeJS }}
+        </script>
+        {{ block "header-scripts" . }}{{ end }}
+    </head>
+    <body>
+        {{ partial "header" .}}
+        <div class="content">
+            {{ block "main" . }}{{ end }}
+        </div>
+        {{ partial "footer" .}}
+    </body>
+</html>

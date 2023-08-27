@@ -1,0 +1,110 @@
+.notice-external + *[id] {
+    display: none;
+}
+
+.notice-external-map {
+    background-color: $light-grey;
+    line-height: 600px;
+    text-align: center;
+}
+
+.notice-external {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 450px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 0;
+    font-size: 0;
+    @media screen and (max-width: $tablet_start_size) {
+        padding: #{14px + $tablet_grid_padding};
+    }
+
+    @media screen and (max-width: $mobile_start_size) {
+        padding: #{9px + $mobile_grid_padding};
+    }
+}
+
+.notice-external .notice-external-card-title {
+    margin: 0;
+    color: $gunmetal;
+    font-size: 16px;
+    line-height: 28px;
+
+    @media screen and (max-width: $tablet_start_size) {
+        font-size: 14px;
+        line-height: 26px; 
+    }
+}
+
+.notice-external-card {
+    background: $pale_grey;
+    border: 1px solid $cloudy_blue;
+    border-radius: 4px;
+}
+
+.notice-external-card-header,.notice-external-card-body,.notice-external-card-footer {
+    padding-right: 15px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.notice-external-card-header {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid $cloudy_blue;
+}
+
+.notice-external-card-body {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.notice-external-card-body:after {
+    height: 0;
+    display: block;
+    content: "";
+    visibility: hidden;
+    clear: both;
+}
+
+.notice-external-card-icon {
+    line-height: 45px;
+    text-align: center;
+    margin-left: 10px;
+    height: 45px;
+    width: 54px;
+    color: $cool_blue;
+    float: right;
+    border: 1px solid $cloudy_blue;
+    background: $white;
+
+    svg {
+        display: inline-block;
+        max-width: 100%;
+        height: auto;
+        vertical-align: middle;
+    }
+}
+
+.notice-external-card-text {
+    font-size: 14px;
+    line-height: 26px;
+    color: $gunmetal;
+}
+
+.notice-external-card-footer {
+    padding-bottom: 20px;
+}
+
+.notice-external-description {
+    font-size: 11px;
+    line-height: 16px;
+    margin-top: 10px;
+    padding: 0 15px;
+    color: $gunmetal;
+
+    a:hover {
+        color: $blue-hover;
+    }
+}

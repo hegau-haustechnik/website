@@ -1,0 +1,86 @@
+{{define "main"}}
+
+<div class="google_analytics">
+    <div class="container">
+        <div class="row text-center">
+            <div class="columns six sm-twelve text-center inline-block">
+                <h3>
+                    {{ .Title }}
+                </h3>
+                <div class="text_analytic text-left">
+                    <p>
+                        {{ .Params.text_content | safeHTML }}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row text-center">
+            <button class="btn" type="submit" id="set-cookie-confirm-submit">
+                <span>Google Analytics Tracking ist deaktiviert</span>
+            </button>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+    <!--<div class="input">
+        <button class="btn-orange loading" type="submit" id="set-cookie-confirm-submit">
+            <span>{{ i18n "GA_TRACKING_OUT_COOKIE_NOT_SET" }}</span>
+            <i class="fa fa-spin fa-spinner"></i>
+        </button>
+    </div>-->
+<script type="text/javascript">
+    jQuery(function($) {
+        $('<link>', {
+            rel: 'stylesheet',
+            type: 'text/css',
+            href: 'https://static.wirsindhandwerk.de/static/css/main.css'
+        }).appendTo('head');
+
+        var gaTrackingSettings = function() {
+            this.gaTrackingId = '{{ $.Site.Params.gaTrackingId }}';
+            this.disableStr = 'ga-disable-' + this.gaTrackingId;
+            this.btn = $('#set-cookie-confirm-submit');
+
+            this.initialize = function() {
+                if (document.cookie.indexOf(this.disableStr + '=true') > -1) {
+                    window[this.disableStr] = true;
+                    this.cookieSetInfo();
+                } else {
+                    this.cookieNotSetInfo();
+                }
+                this.checkUser();
+                this.bindEvents();
+            }
+            this.checkUser = function() {
+                $.ajax({
+                    url: '/user/service/status',
+                    success: function(response) {
+                    },
+                    error: function() {
+                    }
+                });
+            }
+            this.cookieSetInfo = function() {
+                this.btn.removeClass('loading');
+                this.btn.find('span').first().html('Google Analytics Tracking ist deaktiviert');
+            }
+            this.cookieNotSetInfo = function() {
+                this.btn.removeClass('loading');
+                this.btn.find('span').first().html('Google Analytics Tracking jetzt deaktivieren');
+            }
+            this.bindEvents = function() {
+                var self = this;
+                this.btn.click(function() {
+                    document.cookie = self.disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+                    self.cookieSetInfo();
+                    location.reload();
+                });
+            }
+        }
+        var gaSetttings = new gaTrackingSettings();
+        gaSetttings.initialize();
+    });
+</script>
+{{ end }}

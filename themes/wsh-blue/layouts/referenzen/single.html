@@ -1,0 +1,146 @@
+{{ define "header-scripts" }}
+{{ $lightbox := "/themes/wsh-blue/static/js/lightbox.js"  | readFile }}
+<script type="text/javascript">
+    {{ $lightbox | safeJS }}
+</script>
+{{ end }}
+{{define "main"}}
+<div class="referenzen">
+    <div class="top-image">
+        <div class="image-container">
+            <span style="background-image: url({{ .Params.header_image }});"></span>
+            <div class="title">
+                <h1>{{ .Title }}</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="top-part-text">
+        <div class="container">
+            <div class="row text-center">
+                <div class="columns six sm-twelve text-center inline-block">
+                    <p>
+                        {{ .Params.explanation_text | safeHTML }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="referenzen-listings">
+        {{ range $gallery := .Params.galleries }}
+        <div class="container ">
+            <div class="row text-center">
+                <div class="columns six sm-twelve text-center inline-block">
+                    <h3>
+                        {{ $gallery.title | safeHTML }}
+                    </h3>
+                    <p>
+                        {{ $gallery.description | safeHTML }}
+                    </p>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="container referenzen">
+            <div class="row">
+                {{ range $.Resources.Match $gallery.images_path }}{{ $thumb := .Resize "350x" }}<div
+                    class="columns inline-block three md-four sm-six text-left">
+                <a href="{{ .RelPermalink }}" data-lightbox="{{ $gallery.Title }}">
+                <span title=""  style="background-image: url({{ $thumb.RelPermalink }});"></span>
+                </a>
+            </div>{{ end }}
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        {{ end }}
+    </div>
+    <div class="bewertungen">
+        <div class="container">
+            <div class="row text-center">
+                <div class="columns four md-six sm-twelve inline-block">
+                    <h3>{{ .Params.bewertungen_header | safeHTML }}</h3>
+                    <p>
+                        {{ .Params.bewertungen_text | safeHTML }}
+                    </p>
+                    <div class="wsh-widget">
+                        <!-- BEGIN wsh widget ID wGgeoLdQD3F8p0ywBm2lH9q3evGr -->
+                        <!--
+                         placeholders:
+                         https://www.wirsindhandwerk.de/: //www.wirsindhandwerk.de/
+                         wGgeoLdQD3F8p0ywBm2lH9q3evGr the widget ID
+                         //w.wsh.de/: //w.wsh.de/
+                         //widget-errors.wsh.de/: //widget-errors.wsh.de/
+                        -->
+
+                        <div data-wsh-wid="wGgeoLdQD3F8p0ywBm2lH9q3evGr">
+                            <a data-wsh-fb href="https://www.wirsindhandwerk.de/widget/wGgeoLdQD3F8p0ywBm2lH9q3evGr" style="text-decoration: none"
+                               target="_blank" rel="noopener">
+                                <img src="//w.wsh.de/wGgeoLdQD3F8p0ywBm2lH9q3evGr.png"/>
+                            </a>
+                            <noscript>
+                                <img src="//widget-errors.wsh.de/index.png?widgetId=wGgeoLdQD3F8p0ywBm2lH9q3evGr&message=noJavascript"
+                                     style="height:0;width:0;"/>
+                            </noscript>
+                            <script type="text/javascript">
+                                (function () {
+                                    function setWidgetsVisibility(visibility) {
+                                        var widgetElements = document.querySelectorAll("[data-wsh-wid='wGgeoLdQD3F8p0ywBm2lH9q3evGr']");
+                                        for (var i = 0; i < widgetElements.length; i++) {
+                                            if(widgetElements[i].hasAttribute('data-wsh-wid')){
+                                                widgetElements[i].setAttribute("style", "visibility: " + (visibility ? "visible" : "hidden"));
+                                            }
+                                        }
+                                    }
+
+                                    var scriptTag = document.scripts[document.scripts.length - 1];
+                                    var parentTag = scriptTag.parentNode;
+
+                                    function loadScript(url, callback) {
+                                        var script = document.createElement('script');
+                                        script.type = 'text/javascript';
+                                        script.async = true;
+                                        script.charset = 'utf-8';
+                                        script.src = url;
+                                        var entry = document.getElementsByTagName('script')[0];
+                                        entry.parentNode.insertBefore(script, entry);
+                                        if (script.addEventListener) {
+                                            script.addEventListener('load', callback, false);
+                                        }
+                                        else {
+                                            script.attachEvent('onreadystatechange', function () {
+                                                if (/complete|loaded/.test(script.readyState))
+                                                    callback();
+                                            });
+                                        }
+                                    }
+
+                                    setWidgetsVisibility(false);
+                                    loadScript("//w.wsh.de/wGgeoLdQD3F8p0ywBm2lH9q3evGr.js", function () {
+                                        if (typeof Wsh !== 'undefined') {
+                                            Wsh.init(parentTag);
+                                        }
+                                        else {
+                                            var errorImageNode = document.createElement('img');
+                                            errorImageNode.setAttribute("src", "//widget-errors.wsh.de/index.png?widgetId=wGgeoLdQD3F8p0ywBm2lH9q3evGr&message=widgetUndefinedOrTimedOut");
+                                            errorImageNode.setAttribute("style", 'height:0;width:0;');
+                                            scriptTag.parentNode.insertBefore(errorImageNode, scriptTag);
+                                        }
+                                        setWidgetsVisibility(true);
+                                    });
+                                })();
+                            </script>
+                        </div>
+                        <!-- END wsh widget ID wGgeoLdQD3F8p0ywBm2lH9q3evGr -->
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{{ end }}

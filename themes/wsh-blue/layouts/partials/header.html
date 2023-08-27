@@ -1,0 +1,42 @@
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="columns twelve inline-block">
+        <div class="site-logo">
+          <a href="/">
+            <img src="{{ "/images/logo.png" | absURL}}" alt="">
+          </a>
+        </div>
+        {{ $url := .RelPermalink }}
+        <ul class="main-menu sm-hide">
+          <li {{ if .IsHome }}class="active"{{ end }}>
+            <p>
+              <a href="/">
+                Start
+              </a>
+            </p>
+          </li>{{ range sort (where .Site.Pages "Params.show_menu" true) "Params.order" "asc"}}<li  {{ if eq $url .RelPermalink }}class="active"{{ end }}>
+            <p>
+              <a href="{{ .RelPermalink }}" >{{ .Title }}</a>
+            </p>
+          </li>{{ end }}
+        </ul>
+        <select name="main-menu" id="main-menu">
+          <option value="/" {{ if .IsHome }}selected="selected"{{ end }}>
+            Start
+          </option>{{ range sort (where .Site.Pages "Params.show_menu" true) "Params.order" "asc"}}<option value="{{ .RelPermalink }}" {{ if eq $url .RelPermalink }}selected="selected"{{ end }}>
+            {{ .Title }}
+        </option>{{ end }}
+        </select>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    jQuery(function($) {
+        $('#main-menu').change(function() {
+            var url = $(this).val();
+            window.location = url;
+        });
+    });
+  </script>
+</header>

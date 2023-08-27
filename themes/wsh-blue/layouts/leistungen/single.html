@@ -1,0 +1,75 @@
+{{define "main"}}
+<div class="leistungen">
+    <div class="top-image">
+        <div class="image-container">
+            <span style="background-image: url({{ .Params.header_image }});"></span>
+	    <div class="title">
+                <h1>{{ .Title }}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="overview">
+        <div class="container">
+            <div class="row text-center">
+                    <div class="columns eight sm-twelve text-left left-part">
+                            <h2 class="title">{{ .Params.leistungen_header | safeHTML }}</h2>
+                            <p>
+                                {{ .Params.leistungen_text | safeHTML }}
+                            </p>
+                    </div>
+                <div class="columns four sm-twelve text-left right-part with-border">
+                        <h2 class="title">{{ .Params.kundendienst_header | safeHTML }}</h2>
+                        <p>
+                            {{ .Params.kundendienst_text | safeHTML}}
+                        </p>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+
+    <div class="details">
+        <div class="container">
+            <h2 class="title text-center">{{.Params.leistungen_detail_header}}</h2>
+            
+            {{ range $feature := .Params.features }}
+            <div class="onerow">
+                <div class="row text-center">
+                    <div class="columns two sm-twelve inline-block text-left">
+                        <img class="icon_image" src="{{ $feature.icon }}">
+                    </div>
+                    <div class="columns six md-eight sm-twelve inline-block text-left">
+                         <h3>{{ $feature.title }}</h3>
+                            <p>{{ $feature.text }}</p>
+                    </div>
+                </div>
+            </div>
+	   {{ end }}
+                
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="contact-details">
+        <div class="container">
+            <div class="row text-center anfrage_container">
+                <div class="columns six sm-twelve inline-block">
+                        <h3>{{ .Params.anfrage_header }}</h3>
+                        <p>
+                          {{ .Params.anfrage_text | safeHTML}}
+                        </p>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="columns twelve md-nine sm-twelve inline-block">
+                    <a href="/kontakt" class="btn bold">Jetzt Kontaktanfrage senden</a>
+                </div>
+            </div>
+         </div>
+    </div>
+</div>
+
+{{ end }}
+
+

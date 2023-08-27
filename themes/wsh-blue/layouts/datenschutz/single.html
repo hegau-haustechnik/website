@@ -1,0 +1,29 @@
+{{define "main"}}
+
+<div class="datenschutz">
+    <div class="top-image">
+        <div class="image-container">
+            <span style="background-image: url({{ .Params.header_image }});"></span>
+            <div class="title">
+                <h1>{{ .Title }}</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="container overview">
+            <div class="row">
+                <div class="columns ten md-twelve inline-block">
+                
+
+    {{ $ds := "/themes/wsh-blue/static/datenschutz.html"  | readFile }}
+        {{ $ds | safeHTML }}
+
+
+		</div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+{{ end }}

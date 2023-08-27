@@ -1,0 +1,51 @@
+//Colors
+$tablet_start_size: 768px;
+$mobile_start_size: 520px;
+
+$white: #fff;
+$blue: #51BAEB;
+$blue-hover: #39a5d5;
+$gunmetal: #1A1A1A;
+$cool_blue: #0069b4;
+$red: #E30613;
+$grey: #c3c3c3;
+$black: #313131;
+$light-grey: #f3f3f3;
+$input-border: #c4c4c4;
+$pale_grey: #f8f8f9;
+$cloudy_blue: #c4ced9;
+
+
+//Font sizes
+$default_font_size: 16px;
+$default_line_height: 32px;
+
+$tablet_font_size: 14px;
+$tablet_line_height: 24px;
+
+$text_container_width: 680px;
+
+//Grid
+$default_grid_padding: 10px;
+$tablet_grid_padding: 8px;
+$mobile_grid_padding: 6px;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin box-sizing-border-box() {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@mixin animateElement($s) {
+  -webkit-transition: all unquote(#{$s}s) ease-out;
+  -moz-transition: all unquote(#{$s}s) ease-out;
+  -ms-transition: all unquote(#{$s}s) ease-out;
+  -o-transition: all unquote(#{$s}s) ease-out;
+  transition: all unquote(#{$s}s) ease-out;
+}
+

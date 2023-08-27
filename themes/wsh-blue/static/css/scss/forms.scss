@@ -1,0 +1,13 @@
+@import "const";
+.input-container {
+  margin-bottom: 20px;
+}
+input, textarea {
+  padding: 10px;
+  @include box-sizing-border-box;
+  width: 100%;
+  border: 1px solid $input-border;
+}
+textarea {
+  min-height: 120px;
+}

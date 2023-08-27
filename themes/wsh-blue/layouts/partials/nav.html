@@ -1,0 +1,5 @@
+<ul>
+    {{range .Site.Menus.mainmenu}}
+    <li> <a href="{{ .RelPermalink }}">{{.Name}}</a></li>
+    {{end}}
+</ul>

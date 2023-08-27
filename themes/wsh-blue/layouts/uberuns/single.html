@@ -1,0 +1,60 @@
+
+{{ define "header-scripts" }}
+    {{ $lightbox := "/themes/wsh-blue/static/js/lightbox.js"  | readFile }}
+    <script type="text/javascript">
+        {{ $lightbox | safeJS }}
+    </script>
+{{ end }}
+
+{{define "main"}}
+
+
+<div class="ueberuns">
+    <div class="top-image">
+        <div class="image-container">
+            <span style="background-image: url({{ .Params.header_image }});"></span>
+            <div class="title">
+                <h1>{{ .Title }}</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="container overview">
+            <div class="row text-center">
+                <div class="columns ten md-twelve inline-block text-left">
+                    <h2 class="title">{{ .Params.text_header | safeHTML }}</h2>
+                    <p>
+                        {{ .Params.text_content | safeHTML }}
+                    </p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row certs">
+                    <h2 class="title">Zeugnisse, Zertifikate und Auszeichnungen</h2>
+                {{ range  .Resources.ByType "image" }}{{ $thumbnail := .Resize "250x" }}<div
+                    class="columns four md-six sm-twelve inline-block text-left"><a href="{{ .RelPermalink }}" data-lightbox="certs">
+                        <span style="background-image: url({{ $thumbnail.Permalink }});"></span></a>
+                        <p >{{ .Title | safeHTML }}</p>
+                            </div>{{ end }}
+                </div>
+	        </div>
+
+     	   <div class="row">
+                <div class="columns twelve sm-twelve inline-block text-left">
+                    <h3 class="title">{{ .Params.subtext_header | safeHTML }}</h3>
+                    <p>
+                        {{ .Params.subtext_content | safeHTML }}
+                    </p>
+                </div>
+            </div>
+	
+
+	
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+{{ end }}

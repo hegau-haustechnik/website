@@ -1,0 +1,131 @@
+@import "const";
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  .row.nopadding {
+    padding: 0;
+  }
+  }
+
+.smallcontainer {
+  border: 1px solid lightgray;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+  padding: 0 $default_grid_padding;
+  margin: 0;
+  &.fright {
+    float: right;
+  }
+}
+.columns.nopadding,
+.column.nopadding {
+  padding: 0;
+}
+.columns.inline-block,
+.column.inline-block {
+  float: none;
+  display: inline-block;
+  vertical-align: top;
+}
+.one.column,
+.one.columns                    { width: 8.3333333333%; }
+.two.columns                    { width: 16.6666666667%; }
+.three.columns                  { width: 25%;            }
+.four.columns                   { width: 33.3333333333%; }
+.five.columns                   { width: 41.6666666667%; }
+.six.columns                    { width: 50%;            }
+.seven.columns                  { width: 58.3333333333%; }
+.eight.columns                  { width: 66.6666666667%; }
+.nine.columns                   { width: 75%;          }
+.ten.columns                    { width: 83.3333333333%; }
+.eleven.columns                 { width: 91.6666666667%; }
+.twelve.columns                 { width: 100%;}
+.one-third.column               { width: 33.3333333333%; }
+.two-thirds.column              { width: 66.6666666667%; }
+.one-half.column                { width: 50%; }
+.clearfix {
+  clear: both;
+}
+.wsh-hide {
+  display: none !important;
+}
+.bottom-margin {
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: $tablet_start_size) {
+  .container .row {
+    padding: 0 14px;
+  }
+  .column, .columns {
+    padding: 0 $tablet_grid_padding;
+  }
+  .columns.md-nopadding,
+  .column.md-nopadding {
+    padding: 0;
+  }
+  .md-one.column,
+  .md-one.columns                    { width: 8.3333333333%; }
+  .md-two.columns                    { width: 16.6666666667%; }
+  .md-three.columns                  { width: 25%;            }
+  .md-four.columns                   { width: 33.3333333333%; }
+  .md-five.columns                   { width: 41.6666666667%; }
+  .md-six.columns                    { width: 50%;            }
+  .md-seven.columns                  { width: 58.3333333333%; }
+  .md-eight.columns                  { width: 66.6666666667%; }
+  .md-nine.columns                   { width: 75%;          }
+  .md-ten.columns                    { width: 83.3333333333%; }
+  .md-eleven.columns                 { width: 91.6666666667%; }
+  .md-twelve.columns                 { width: 100%;}
+  .md-one-third.column               { width: 33.3333333333%; }
+  .md-two-thirds.column              { width: 66.6666666667%; }
+  .md-one-half.column                { width: 50%; }
+  .md-hide                           {display: none;}
+  .md-bottom-margin, .bottom-margin                  {margin-bottom: 25px;}
+}
+@media only screen and (max-width: $mobile_start_size) {
+  .container .row {
+    padding: 0 9px;
+  }
+  .column, .columns {
+    padding: 0 $mobile_grid_padding;
+  }
+  .columns.sm-nopadding,
+  .column.sm-nopadding {
+    padding: 0;
+  }
+  .sm-one.column,
+  .sm-one.columns                    { width: 8.3333333333%; }
+  .sm-two.columns                    { width: 16.6666666667%; }
+  .sm-three.columns                  { width: 25%;            }
+  .sm-four.columns                   { width: 33.3333333333%; }
+  .sm-five.columns                   { width: 41.6666666667%; }
+  .sm-six.columns                    { width: 50%;            }
+  .sm-seven.columns                  { width: 58.3333333333%; }
+  .sm-eight.columns                  { width: 66.6666666667%; }
+  .sm-nine.columns                   { width: 75%;          }
+  .sm-ten.columns                    { width: 83.3333333333%; }
+  .sm-eleven.columns                 { width: 91.6666666667%; }
+  .sm-twelve.columns                 { width: 100%;}
+  .sm-one-third.column               { width: 33.3333333333%; }
+  .sm-two-thirds.column              { width: 66.6666666667%; }
+  .sm-one-half.column                { width: 50%; }
+  .sm-hide                           {display: none !important;}
+  .sm-show                           {display: block !important;}
+  .sm-bottom-margin, .bottom-margin                  {margin-bottom: 25px;}
+}

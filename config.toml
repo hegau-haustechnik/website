@@ -1,0 +1,13 @@
+baseURL = "/"
+languageCode = "de"
+defaultContentLanguage = "de"
+title = "Hegau-Haustechnik"
+theme = "wsh-blue"
+[params]
+AuthorName = "Hegau-Haustechnik"
+googlemapskey = "API_KEY"
+recaptchaSiteKey = "API_KEY"
+recaptchaSecretKey = "API_KEY"
+disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
+gaTrackingId = "test"
+

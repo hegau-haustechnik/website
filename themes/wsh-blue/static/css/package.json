@@ -1,0 +1,16 @@
+{
+  "name": "wsh-hegau",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-sass": "^1.0.0"
+  },
+  "main": "Gruntfile.js",
+  "dependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wsh",
+  "license": "ICU",
+  "description": "hegau haustechnik theme"
+}

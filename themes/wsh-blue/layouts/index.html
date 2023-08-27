@@ -1,0 +1,71 @@
+{{ define "main" }}
+<div class="startpage">
+    <div class="top-image">
+        <div class="image-container">
+            <span style="background-image: url({{ .Params.header_image }});"></span>
+        </div>
+    </div>
+
+    <div class="owner-info text-center">
+        <div class="photo">
+            <span style="background-color: #fff; background-image: url(/images/signet-hegau-haustechnik.png);"></span>
+        </div>
+        <div class="info">
+            <strong>Hegau-Haustechnik</strong>
+        </div>
+    </div>
+
+    <div class="overview">
+        <div class="container">
+            <div class="row">
+                <div class="columns eight sm-twelve left-part with-border">
+                    <h1>{{ .Params.overview_header | safeHTML }}</h1>
+                    <p>
+                        {{ .Params.overview_text | safeHTML }}
+                    </p>
+                    <!-- user requested to take it out, 19.07.2018
+                    <div class="columns eight md-twelve inline-block nopadding">
+                        <img  class ="start_page_image" src = "/images/startseite_content_image.jpg">
+                    </div>
+			-->
+                </div>
+                <div class="columns four sm-twelve right-part">
+                    {{ range $elem := .Params.sidebar_content }}
+                    <div class="bottom-margin">
+                        <h2 class="title">{{ $elem.header | safeHTML }}</h2>
+                        <p class="sidebar-content">{{ $elem.content | safeHTML }}</p>
+                    </div>
+                    {{ end }}
+
+
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- user requested to take it out, 19.07.2018
+    <div class="our-range">
+        <div class="container">
+            <div class="row">
+                <h2 class="title text-center">{{ .Params.unser_angebot_header}}</h2>
+		{{range $feature := .Params.features}}<div class="columns inline-block four md-six sm-twelve text-center">
+                    <img class="icon_image" src="{{ $feature.icon }}"/>
+                    <h3>{{ $feature.title | safeHTML }}</h3>
+                        <div class="paragraph_container">
+                        <p>
+                            {{ $feature.text | safeHTML }}
+                        </p>
+                        </div>
+                </div>{{ end }}
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="row text-center">
+                <a href="/leistungen" class="btn bold">Alle Leistungen anzeigen</a>
+            </div>
+        </div>
+    </div>
+-->
+</div>
+
+{{ end }}
